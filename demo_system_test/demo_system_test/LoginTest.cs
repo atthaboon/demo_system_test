@@ -48,7 +48,7 @@ namespace demo_system_test
             // Arrange
 
             // Act
-            SubmitLogin("admin", "admin@123");
+            Login("admin", "admin@123");
 
             // Assert
             var logoutBtn = driver.FindElement(By.Id("login-btn"));
@@ -61,14 +61,14 @@ namespace demo_system_test
             // Arrange
 
             // Act
-            SubmitLogin("admin", "admin@1234");
+            Login("admin", "admin@1234");
 
             // Assert
             var errorDialog = driver.FindElement(By.ClassName("validation-summary-errors"));
             Assert.AreEqual("Feil brukernavn eller passord.", errorDialog.Text);
         }
 
-        private void SubmitLogin(string username, string password)
+        private void Login(string username, string password)
         {
             var userNameTB = driver.FindElement(By.Id("UserName"));
             userNameTB.Clear();
