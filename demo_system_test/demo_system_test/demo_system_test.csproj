@@ -60,6 +60,7 @@
     <Compile Include="OOP1\ICar.cs" />
     <Compile Include="LoginTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestForgetPwd.cs" />
     <Compile Include="Truck.cs" />
   </ItemGroup>
   <ItemGroup>
