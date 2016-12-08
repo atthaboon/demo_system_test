@@ -12,7 +12,8 @@ namespace demo_system_test
     [TestFixture]
     public class TestForgetPwd
     {
-        IWebDriver driver;
+        private IWebDriver driver;
+        private const string FORGET_NOTIFY_MSG = "Er en aktiv bruker angitt, skal nå en lenke for å legge inn nytt passord ha blitt sendt til din epost. Kontakt Pensjon Pluss hvis du trenger bistand!";
 
         [TestFixtureSetUp]
         public void OpenWebBrowser()
@@ -67,7 +68,7 @@ namespace demo_system_test
              var resetpwd = driver.FindElement(By.Id("Reset Password"));
              resetpwd.Click();
              var successMsgTxt = driver.FindElement(By.ClassName("viewBag-success"));
-             Assert.AreEqual("Er en aktiv bruker angitt, skal nå en lenke for å legge inn nytt passord ha blitt sendt til din epost. Kontakt Pensjon Pluss hvis du trenger bistand!", successMsgTxt.Text);
+             Assert.AreEqual(FORGET_NOTIFY_MSG, successMsgTxt.Text);
          }
 
         [Test]
@@ -80,7 +81,7 @@ namespace demo_system_test
             resetpwd.Click();
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             var successMsgTxt = driver.FindElement(By.ClassName("viewBag-success"));
-            Assert.AreEqual("Er en aktiv bruker angitt, skal nå en lenke for å legge inn nytt passord ha blitt sendt til din epost. Kontakt Pensjon Pluss hvis du trenger bistand!", successMsgTxt.Text);
+            Assert.AreEqual(FORGET_NOTIFY_MSG, successMsgTxt.Text);
         }
 
         [Test]
@@ -95,7 +96,7 @@ namespace demo_system_test
              resetpwd.Click();
              driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
              var usernamecorrectSuccessMsgTxt = driver.FindElement(By.ClassName("viewBag-success"));
-             Assert.AreEqual("Er en aktiv bruker angitt, skal nå en lenke for å legge inn nytt passord ha blitt sendt til din epost. Kontakt Pensjon Pluss hvis du trenger bistand!", usernamecorrectSuccessMsgTxt.Text);
+             Assert.AreEqual(FORGET_NOTIFY_MSG, usernamecorrectSuccessMsgTxt.Text);
          } 
 
     }
