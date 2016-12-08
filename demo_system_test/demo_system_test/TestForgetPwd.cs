@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using Bumblebee.Interfaces;
+using Bumblebee.Implementation;
 
 namespace demo_system_test
 {
@@ -97,7 +99,9 @@ namespace demo_system_test
              driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
              var usernamecorrectSuccessMsgTxt = driver.FindElement(By.ClassName("viewBag-success"));
              Assert.AreEqual(FORGET_NOTIFY_MSG, usernamecorrectSuccessMsgTxt.Text);
-         } 
+
+            
+         }
 
     }
 
