@@ -59,6 +59,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePwd_on_PuST\ChangePasswordPage.cs" />
+    <Compile Include="ChangePwd_on_PuST\ConfirmPwdChangePage.cs" />
+    <Compile Include="ChangePwd_on_PuST\TestChangePwd.cs" />
     <Compile Include="LoginTestPageObject.cs" />
     <Compile Include="OOP1\Car.cs" />
     <Compile Include="OOP1\CarTest.cs" />
